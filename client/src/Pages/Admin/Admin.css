@@ -121,6 +121,7 @@
 .centerCards {
  width: 100%;
 margin-left: 6.5%;
+margin-top: -18px;
 }
 
 #donutChart {
@@ -145,7 +146,7 @@ margin-left: 6.5%;
 #barChart {
     margin-left: 8%;
     width: 82%;
-    height: 350px;
+    height: 450px;
     float: left;
 }
 
@@ -164,7 +165,7 @@ margin-left: 6.5%;
     margin: -20px;
     color: #519aca;
     cursor: pointer;
-    margin-top: 12px;
+    margin-top: 30px;
 }
 
 .totalCommentsNumber:hover {
@@ -189,4 +190,82 @@ margin-left: 6.5%;
     width: 85%;
     height: 700px;
     float: left;
+}
+
+/* bar chart */
+figure {
+	max-width: 1200px;
+}
+
+#x-axis {
+	float: left;
+	margin-right: 20px;
+	margin-block-start: 1.25em;
+	font-size: 12px;
+
+}
+
+
+
+.question-row {
+	margin-bottom: .5em;
+}
+@keyframes expand {
+	from {width: 0%;}
+	to {width: 100%;}
+}
+
+.chart {
+	overflow: hidden;
+	width: 0%;
+	animation: expand .5s ease forwards;
+}
+.chart {
+	animation-delay: .1s;
+}
+.chart {
+	animation-delay: .2s;
+}
+.block {
+	display: block;
+	height: 35px;
+	color: #fff;
+	font-size: 15px !important;
+	float: left;
+	background-color: #969ca5;
+	position: relative;
+	overflow: hidden;
+	opacity: 1;
+	transition: opacity, .3s ease;
+	cursor: pointer;
+}
+.block:nth-of-type(2),
+.legend li:nth-of-type(2):before {
+	background-color: #519aca;
+}
+.block:nth-of-type(3),
+.legend li:nth-of-type(3):before {
+	background-color: #76ae86;
+}
+
+.block:hover {
+	opacity: .65;
+}
+.value {
+	display: none;
+	line-height: 1em;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+@media screen and (min-width: 768px) {
+	
+	.block {
+		font-size: 1em;
+	}
+	.legend {
+		width: 50%;
+	}
 }

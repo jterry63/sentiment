@@ -33,8 +33,8 @@ class Admin extends Component {
     questionOneTotalOne: 1,
     questionOneTotalTwo: 5,
     questionOneTotalThree: 6,
-    questionOneTotalFour: 6,
-    questionOneTotalFive: 5,
+    questionOneTotalFour: 12,
+    questionOneTotalFive: 9,
     surveysDeployed: 50,
     surveysCompleted: 45,
     surveysIncomplete: 9,
@@ -50,7 +50,8 @@ class Admin extends Component {
     bulletNine: "bullet",
     overviewSection: "block",
     userSection: "none",
-    surveySection: "none"
+    surveySection: "none",
+    quarter: "block"
 
 
   };
@@ -145,6 +146,7 @@ class Admin extends Component {
       overviewSection: "block",
       userSection: "none",
       surveySection: "none",
+      quarter: "block"
     })
   }
 
@@ -176,7 +178,8 @@ class Admin extends Component {
 
       overviewSection: "none",
       surveySection: "none",
-      userSection: "block"
+      userSection: "block",
+      quarter: "none"
     })
   }
 
@@ -223,6 +226,7 @@ class Admin extends Component {
       overviewSection: "none",
       userSection: "none",
       surveySection: "block",
+      quarter: "none"
     })
   }
 
@@ -437,7 +441,7 @@ class Admin extends Component {
       <div>
 
         <nav>
-          <div className="nav-wrapper" style={{ boxShadow: '0 2px 8px 0 rgba(0,0,0,.08)' }}>
+          <div className="nav-wrapper" style={{ backgroundColor: "white", boxShadow: '0 2px 8px 0 rgba(0,0,0,.08)' }}>
             <a href="#" className="brand-logo"><img src="images/mx-black-logo.png" /></a>
             <div className="right" style={{ marginRight: "90px", marginTop: '12px' }}>
 
@@ -457,6 +461,17 @@ class Admin extends Component {
 
             </div>
 
+   <div className='month center' style={{display: this.state.quarter, marginLeft: "350px"}}>
+            <ButtonGroup
+              buttons={[
+                { 'aria-label': 'Back', icon: 'caret-left' },
+                { 'aria-label': 'March 2015 to February 2016', text: 'Quarter 2' },
+                { 'aria-label': 'Forward', icon: 'caret-right' }
+              ]}
+              type='primaryOutline'
+            />
+
+          </div>
 
 
 
@@ -514,7 +529,7 @@ class Admin extends Component {
 
               <CollapsibleContent className="additionalClassForContent">
                 <ul className="dropDownList">
-                  <li className="dropDownItem" onClick={this._handleSideNavClickSix}> <div className={this.state.bulletSix} /> Live Surveys</li>
+                  <li className="dropDownItem" onClick={this._handleSmallModalClick}> <div className={this.state.bulletSix} /> Live Surveys</li>
                   <li className="dropDownItem" onClick={this._handleSmallModalClick}> <div className={this.state.bulletSeven} /> Concluded Surveys</li>
                   <li className="dropDownItem" onClick={this._handleSmallModalClick}> <div className={this.state.bulletEight} /> Create</li>
                   <li className="dropDownItem" onClick={this._handleSmallModalClick}> <div className={this.state.bulletNine} /> Deploy</li>
@@ -530,17 +545,6 @@ class Admin extends Component {
 
           <br></br>
 
-          <div className='month center'>
-            <ButtonGroup
-              buttons={[
-                { 'aria-label': 'Back', icon: 'caret-left' },
-                { 'aria-label': 'March 2015 to February 2016', text: 'Quarter 2' },
-                { 'aria-label': 'Forward', icon: 'caret-right' }
-              ]}
-              type='primaryOutline'
-            />
-
-          </div>
 
 
           <div className="overview-section" style={{ display: this.state.overviewSection }}>
@@ -670,7 +674,7 @@ class Admin extends Component {
                     <div className="card-action">
                       <div className="center">
 
-                        <p className="totalCommentsNumber" onClick={this._handleDemoButtonClick}>68 </p>
+                        <p className="totalCommentsNumber" onClick={this._handleDemoButtonClick}>93 </p>
                       </div>
                     </div>
                   </div>
@@ -702,52 +706,110 @@ class Admin extends Component {
                   </div>
                   <div className="card-action">
 
-                    <BarChart
-                      width={900}
-                      height={240}
-
-
-                      data={[
-                        {
-                          label: '1',
-                          color: '#519aca',
-                          value: 5,
-
-                        },
-                        {
-                          label: '2',
-                          color: '#519aca',
-                          value: 3
-                        },
-                        {
-                          label: '3',
-                          color: '#519aca',
-                          value: 4
-                        },
-                        {
-                          label: '4',
-                          color: '#519aca',
-                          value: 3
-                        },
-                        {
-                          label: '5',
-                          color: '#519aca',
-                          value: 5
-                        },
-                        {
-                          label: '6',
-                          color: '#519aca',
-                          value: 3
-                        },
-                        {
-                          label: '7',
-                          color: '#519aca',
-                          value: 2
-                        },
-                      ]}
-
-
-                    />
+                            <figure>
+        <div className="graphic">
+       
+          <div className="question-row">
+          
+            <div className="chart">
+            <p id="x-axis">Question 1</p>
+              <span className="block" title="Unfavorable: 8%">
+                <span className="value">8%</span>
+              </span>
+              <span className="block" title="Neutral: 23%">
+                <span className="value">23%</span>
+              </span>
+              <span className="block" title="Favorable: 54%">
+                <span className="value">54%</span>
+              </span>
+            </div>
+          </div>
+          <div className="question-row">
+            <div className="chart">
+              <p id="x-axis">Question 2</p>
+              <span className="block" title="Unfavorable: 14%">
+                <span className="value">14%</span>
+              </span>
+              <span className="block" title="Neutral: 34%">
+                <span className="value">34%</span>
+              </span>
+              <span className="block" title="Favorable: 37%">
+                <span className="value">37%</span>
+              </span>
+            </div>
+          </div>
+          <div className="question-row">
+            <div className="chart">
+              <p id="x-axis">Question 3</p>
+              <span className="block" title="Unfavorable: 2%">
+                <span className="value">2%</span>
+              </span>
+              <span className="block" title="Neutral: 29%">
+                <span className="value">29%</span>
+              </span>
+              <span className="block" title="Favorable: 54%">
+                <span className="value">54%</span>
+              </span>
+            </div>
+          </div>
+          <div className="question-row">
+            <div className="chart">
+              <p id="x-axis">Question 4</p>
+              <span className="block" title="Unfavorable: 56%">
+                <span className="value">56%</span>
+              </span>
+              <span className="block" title="Neutral: 20%">
+                <span className="value">20%</span>
+              </span>
+              <span className="block" title="Favorable: 9%">
+                <span className="value">9%</span>
+              </span>
+            </div>
+          </div>
+          <div className="question-row">
+            <div className="chart">
+              <p id="x-axis">Question 5</p>
+              <span className="block" title="Unfavorable: 10%">
+                <span className="value">10%</span>
+              </span>
+              <span className="block" title="Neutral: 30%">
+                <span className="value">30%</span>
+              </span>
+              <span className="block" title="Favorable: 45%">
+                <span className="value">45%</span>
+              </span>
+            </div>
+          </div>
+          <div className="question-row">
+            <div className="chart">
+              <p id="x-axis">Question 6</p>
+              <span className="block" title="Unfavorable: 20%">
+                <span className="value">20%</span>
+              </span>
+              <span className="block" title="Neutral: 30%">
+                <span className="value">30%</span>
+              </span>
+              <span className="block" title="Favorable: 35%">
+                <span className="value">35%</span>
+              </span>
+            </div>
+          </div>
+          <div className="question-row">
+            <div className="chart">
+              <p id="x-axis">Question 7</p>
+              <span className="block" title="Unfavorable: 6%">
+                <span className="value">6%</span>
+              </span>
+              <span className="block" title="Neutral: 5%">
+                <span className="value">5%</span>
+              </span>
+              <span className="block" title="Favorable: 74%">
+                <span className="value">74%</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </figure>
 
 
 
@@ -758,6 +820,9 @@ class Admin extends Component {
 
 
             </div>
+
+
+
 
 
           </div>
@@ -998,7 +1063,7 @@ class Admin extends Component {
 
           <div className="survey-section" style={{ display: this.state.surveySection }}>
 
-            Hi There
+          
             
 </div>
 

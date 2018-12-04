@@ -20,7 +20,7 @@ class Data extends Component {
       rangeValFive: 3,
       rangeValSix: 3,
       rangeValSeven: 3,
-      backgroundColor: "rgba(40,40,40,.5)",
+      backgroundColor: "#282828",
       imgSrc: "../images/mx-logo.png",
       color: "white",
       border: "1px solid white",
@@ -233,7 +233,7 @@ showQuestionEight = () => {
       
     } else {
       this.setState({
-        backgroundColor: "rgba(40,40,40,.5)",
+        backgroundColor: "#282828",
         imgSrc: "../images/mx-logo.png",
         color: "white",
         border: "1px solid white"
@@ -470,28 +470,48 @@ onInputChangeEight(commentEight) {
         <div className="section" id="surveyHeader">
           <br /><br /><br /><br /><br /><br />
           <h1 className="center light" style={{ color: "white" }} id="helloHeader">MX People Sentiment Survey</h1>
-          <div className="row">
+          <div className="row" id="mobile-hide-me">
             <div className="col s3 m3" />
             <div className="col s6 m6">
               <div className="center">
+              <br></br><br></br><br></br>
                 <h4 className="center light" id="surveyIntro" style={{ color: "white" }}> Welcome to the MX sentiment survey for December. This is an anonymous survey used to help determine the sentiment of MX team members. Please answer each question honestly and openly. 
             
                 </h4>
+                
               </div>
             </div>
             <div className="col s3 m3" />
           </div>
+          
+
+   <div className="row" id="mobile-view">
+           
+            <div className="col s12 m12">
+              <div className="center">
+                <h4 className="center light" id="surveyIntro" style={{ color: "white" }}> Welcome to the MX sentiment survey for December. This is an anonymous survey used to help determine the sentiment of MX team members. Please answer each question honestly and openly. 
+            
+                </h4>
+                
+              </div>
+            </div>
+            
+          </div>
+
+
           <div className="row">
             <div className="col s4 m4" />
             <div className="col s4 m4">
               <div className="center">
                 {/* Dropdown Trigger */}
+                <br></br><br></br>
                 <a className="dropdown-trigger light" data-target="dropdown1" style={{ color: "white", cursor: "pointer" }}>English <i className="material-icons" style={{fontSize: 12}}>keyboard_arrow_down</i>
                 </a>
                 {/* Dropdown Structure */}
                 <ul id="dropdown1" className="dropdown-content">
                   
                 </ul>
+                <br></br>
               </div>
             </div>
             <div className="col s4 m4" />
@@ -499,6 +519,10 @@ onInputChangeEight(commentEight) {
           <br />
           <p className="center light" id="surveyWarning" style={{ color: "white" }}>We've added an optional open response to each question if you
             <br />you have feedback or suggestions related to MX, your team, or these questions.</p>
+
+            <p className="center light" id="mobile-view" style={{ color: "white" }}>We've added an optional open response to each question if you
+            you have feedback or suggestions related to MX, your team, or these questions.</p>
+
           <br />
           <div className="center">
             <Icon
@@ -516,9 +540,13 @@ onInputChangeEight(commentEight) {
           </div>
           <div className="col s4 m4" />
         </div>
+
+
         {/*Question 1 Start*/}
         
         <br /> <br />
+
+        {/* Web Version */}
 
         <div className="card-container center-block" id="question_one" style={{ backgroundColor: "white" }}>
           <h2 className="center light">01.</h2>
@@ -597,8 +625,89 @@ onInputChangeEight(commentEight) {
         </div>
 
 
+        </div>
+
+
+        {/* Mobile Version */}
+<div id="mobile-view">
+             <div className="card-container center-block" style={{ backgroundColor: "white" }}>
+          <h2 className="center light">01.</h2>
+          <h4 className="center light">How would you rate your sentiment towards MX's Culture?
+          </h4>
+          <br /><br />
+          <div className="row">
+            
+            <div className="col s12 m12">
+              <div className="row" id="surveyTags">
+                <div className="col s3 m3">
+                  <div className="left-align light">
+                    <p>Extremely Concerned</p>
+                  </div>
+                </div>
+                <div className="col s6 m6" />
+                <div className="col s3 m3">
+                  <div className="right-align light">
+                    <p>Extremely Excited</p>
+                  </div>
+                </div>
+              </div>
+              {/*Range Slider*/}
+              <div className="center" onClick={this.hideMessage}>
+              <Range range={rangeValOne} updateRange={this.updateRangeOne}/>
+           
+              </div>
+             
+            </div>
+          </div>
         
+        {/*Comment Field*/}
+        <div className="row">
+         
+          <div className="col s12 m12">
+            <div className="input-field" id="comment1" onClick={this.hideMessage}>
+            <TextArea
+          elementProps={{
+            onChange: event => this.onInputChangeOne(event.target.value),
+            placeholder: 'Comment'
+          }}
+          rows={5}
+          valid={true}
+        />
+        <br />
+              <Button className="right" id="save1" aria-label='Submit Form' elementProps={{ 'data-my-attribute': 'my attribute data here' }} theme={{ Colors: { PRIMARY: '#333333' } }} type='secondary' onClick={this.handleProgressUpdateOne}>Save</Button>
+              <Button className="right" id="skip1" aria-label='Submit Form' elementProps={{ 'data-my-attribute': 'my attribute data here' }} theme={{ Colors: { PRIMARY: '#333333' } }} type='secondary' onClick={this.handleProgressUpdateOne}>Skip</Button>
+            </div>
+          </div>
+        </div>
+        
+        <div className="center-block" id="message-box" style={{ visibility: this.state.visibility }} onClick={this.hideMessage}>
+          <MessageBox
+          icon='attention-solid'
+          title='This question is required.'
+          color={Styles.Colors.PRIMARY}
+        />
+        </div>
+
        
+<div className="center" id={this.state.arrowOne} onClick={this.handleMessageClick}>
+         <Icon
+          size={50}
+          style={{ fill: 'silver', cursor: "pointer", }}
+          type='caret-down'
+          
+        />
+        </div>
+        <div className="center" id={this.state.checkOne}>
+         <Icon
+          size={50}
+          style={{ fill: '#529aca'}}
+          type='check-solid'
+          
+        />
+        </div>
+
+
+        </div>
         </div>
 
          <br /><br />
@@ -610,7 +719,9 @@ onInputChangeEight(commentEight) {
         
       
           {/*Question Hint 1 End*/}
+
           {/*Question 2 Start*/}
+           {/* Web Version */}
           <div className="card-container center-block" id={this.state.questionTwo}>
         
             <h2 className="center light">02.</h2>

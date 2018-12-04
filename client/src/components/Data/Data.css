@@ -43,6 +43,10 @@ background-size: cover;
     box-shadow: 2px 2px 2px 1px silver;
   }
 
+  #helloHeader {
+    font-size: 60px;
+  }
+
   .light {
     font-weight: 300;
   }
@@ -190,6 +194,73 @@ display: none;
       background: lightblue;
       border-radius: 5px;
     }
+    
+    #mobile-view {
+      display: none;
+    }
 
+    @media only screen and (max-width: 1024px) {
+      .navbar-brand-survey img {
+        margin-left: 100px;
+      }
+      #progressBar {
+        margin-right: 100px;
+      }
+  }
+
+  @media only screen and (max-width: 870px) {
+    #helloHeader {
+      font-size: 40px;
+    }
+    #surveyIntro {
+      font-size: 25px;
+    }
+    #mobile-hide-me {
+    display: none;
+  }
+
+    #mobile-view {
+    display: block;
+  }
+
+  #surveyWarning{
+    display: none;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 10px;
+  }
+
+  #question_one {
+    display: none;
+  }
+
+
+
+
+    
+}
+
+  @media only screen and (max-width: 550px) {
+    .navbar-brand-survey img {
+      margin-left: 50px;
+      height: 23px;
+    width: 54px;
+
+    }
+    #progressBar {
+      margin-right: 50px;
+      width: 30%;
+      font-size: 12px;
+    }
+}
  
  

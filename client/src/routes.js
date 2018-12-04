@@ -2,16 +2,16 @@
 import React from 'react';
 import { Router, Route } from 'react-router';
 
-import About from './components/about';
+
 import NotFound from './components/notfound';
-import Users from './components/users';
+
 
 import { createStore } from 'redux';
 import todoApp from './reducers';
 import { Provider } from 'react-redux'
 import { connect } from 'react-redux'
 
-import Home from './Pages/Home/Home';
+
 import Surveys from './Pages/Surveys/Surveys';
 import Test from './Pages/Test/Test';
 import Admin from './Pages/Admin/Admin';
