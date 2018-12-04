@@ -29,7 +29,7 @@ class Nav extends Component {
 
   render() {
     return (
-   <div>
+      <div>
 
         <nav
           className="nav-master z-depth-0"
@@ -40,33 +40,33 @@ class Nav extends Component {
               <img src={this.state.imgSrc} />
             </a>
 
-            <a href="#" data-target="mobile-demo" className="sidenav-trigger right" style={{marginRight: "10%", cursor: "pointer"}}><i className="material-icons">menu</i></a>
+            <a href="#" data-target="mobile-demo" className="sidenav-trigger right" style={{ marginRight: "10%", cursor: "pointer" }}><i className="material-icons">menu</i></a>
             <ul className="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
-  </ul>
+              <li><a href="sass.html">Sass</a></li>
+              <li><a href="badges.html">Components</a></li>
+              <li><a href="collapsible.html">Javascript</a></li>
+              <li><a href="mobile.html">Mobile</a></li>
+            </ul>
 
-               <div id="login-buttons">
-                <a
-                  href=""
-                  className="btn-flat"
-                  id="loginBtn"
-                  style={{ color: this.state.color }}
-                >
-                  Log In
+            <div id="login-buttons">
+              <a
+                href=""
+                className="btn-flat"
+                id="loginBtn"
+                style={{ color: this.state.color }}
+              >
+                Log In
                 </a>
-                <a
-                  href=""
-                  className="btn-flat"
-                  id="signUpBtn"
-                  style={{ color: this.state.color, border: this.state.border }}
-                  
-                >
-                  Sign Up
+              <a
+                href=""
+                className="btn-flat"
+                id="signUpBtn"
+                style={{ color: this.state.color, border: this.state.border }}
+
+              >
+                Sign Up
                 </a>
-              </div>
+            </div>
 
 
             <div id="nav-buttons">
@@ -102,10 +102,10 @@ class Nav extends Component {
               >
                 Contact
               </a>
-          </div>
-           
             </div>
-         
+
+          </div>
+
         </nav>
 
 
