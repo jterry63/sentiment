@@ -1,23 +1,10 @@
 import React, { Component } from "react";
-import { Icon, Button, SimpleSelect, ButtonGroup, DonutChart, Drawer, HeaderMenu, Modal, Menu, Tooltip, PaginationButtons, MessageBox, SimpleInput } from 'mx-react-components';
-import moment from "moment";
-import { BarChart, BarTimeXAxis } from "mx-react-components";
-import d3 from "d3";
+import { Icon, Button, ButtonGroup, DonutChart, Drawer, HeaderMenu, Modal, Menu, Tooltip, PaginationButtons, MessageBox, SimpleInput } from 'mx-react-components';
 import './Admin.css';
-
 import { CollapsibleComponent, CollapsibleHead, CollapsibleContent } from 'react-collapsible-component'
 
-import { right } from "glamor";
-import { truncateSync } from "fs";
 const axios = require('axios');
-
-
-
 const { Styles } = require('mx-react-components');
-
-
-
-
 
 class Admin extends Component {
 
@@ -52,8 +39,6 @@ class Admin extends Component {
     userSection: "none",
     surveySection: "none",
     quarter: "block"
-
-
   };
 
   componentWillMount() {
@@ -421,21 +406,6 @@ class Admin extends Component {
     const imageHeight = this.state.showSmallModal ? 240 : 600;
     const imageStyle = { width: imageWidth, height: imageHeight, margin: 'auto' };
 
-    //data gathering for Bar Chart
-
-
-
-
-
-
-
-
-
-
-
-
-    //end of data gathering for bar chart
-
 
     return (
       <div>
@@ -616,7 +586,7 @@ class Admin extends Component {
                     <div className="card-content">
                       <p style={{ textAlign: "left", color: "#474747" }}>Survey Ratings
            <Tooltip
-                          placement={"bottom"}>These ratings are pulled from the employee engagement question that asks "How happy are you working Example Inc?"<br></br> "Favorable" = 4-5<br></br> "Neutral" = 3<br></br> "Unfavorable" = 1-2 </Tooltip>
+                          placement={"bottom"}>These ratings are pulled from each question in the MX Sentiment Survey and represents a total of all responses<br></br> "Favorable" = 4-5<br></br> "Neutral" = 3<br></br> "Unfavorable" = 1-2 </Tooltip>
                       </p>
                     </div>
                     <div className="card-action">
